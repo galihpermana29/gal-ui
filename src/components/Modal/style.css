@@ -1,0 +1,4 @@
+.custom-osx-modal-wrapper .ant-modal-content {
+  background: var(--bg-primary);
+  /* border: 1px solid var(--border-popup); */
+}
