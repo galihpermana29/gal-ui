@@ -1,6 +1,6 @@
 {
   "name": "@gsynergysg/ui-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Synergy UI Components - Internal component library based on Ant Design",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
