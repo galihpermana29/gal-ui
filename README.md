@@ -1,15 +1,15 @@
-# @synergysg/ui-components
+# @gsynergysg/ui-components
 
 Internal React component library built on Ant Design and Next.js for Synergy SG projects. Components now ship with static CSS classes, so Tailwind in the consumer is optional.
 
 ## Installation
 
 ```bash
-npm install @synergysg/ui-components
+npm install @gsynergysg/ui-components
 # or
-yarn add @synergysg/ui-components
+yarn add @gsynergysg/ui-components
 # or
-pnpm add @synergysg/ui-components
+pnpm add @gsynergysg/ui-components
 ```
 
 ## Peer Dependencies
@@ -57,7 +57,7 @@ import {
   OSXBannerInfo,
   OSCascaderFilter,
   cn,
-} from '@synergysg/ui-components';
+} from '@gsynergysg/ui-components';
 ```
 
 Types are also aliased with `OS` when applicable (e.g., `OSBadgeProps`).
@@ -65,9 +65,9 @@ Types are also aliased with `OS` when applicable (e.g., `OSBadgeProps`).
 ## Quick Usage Examples
 
 ```tsx
-import '@synergysg/ui-components/styles.css';
+import '@gsynergysg/ui-components/styles.css';
 import 'antd/dist/reset.css';
-import { OSBadge, OSInput, OSDropdownButton } from '@synergysg/ui-components';
+import { OSBadge, OSInput, OSDropdownButton } from '@gsynergysg/ui-components';
 
 export default function Example() {
   return (
@@ -83,7 +83,7 @@ export default function Example() {
 
 ## Styling & Themes
 
-- Design tokens are shipped via CSS variables and included when you import `@synergysg/ui-components/styles.css`.
+- Design tokens are shipped via CSS variables and included when you import `@gsynergysg/ui-components/styles.css`.
 - Components use static CSS classnames (no Tailwind dependency in consumer). A Tailwind preset remains available for teams that want to align tokens/utilities, but it is optional.
 - CSS is marked as side-effectful to avoid tree-shaking.
 
@@ -95,7 +95,7 @@ Import the component styles in your app's root layout or main entry file:
 
 ```tsx
 // app/layout.tsx (Next.js App Router)
-import '@synergysg/ui-components/styles.css';
+import '@gsynergysg/ui-components/styles.css';
 import 'antd/dist/reset.css'; // Ant Design styles
 
 export default function RootLayout({ children }) {
@@ -122,13 +122,13 @@ Tailwind is no longer required by the consumer app for component styling. If you
 // tailwind.config.js
 module.exports = {
   presets: [
-    require('@synergysg/ui-components/tailwind.preset')
+    require('@gsynergysg/ui-components/tailwind.preset')
   ],
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     // Include the component library (only if you use Tailwind utilities alongside components)
-    './node_modules/@synergysg/ui-components/dist/**/*.{js,mjs}',
+    './node_modules/@gsynergysg/ui-components/dist/**/*.{js,mjs}',
   ],
   // Your custom config here
 };
@@ -145,7 +145,7 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     // Include the component library
-    './node_modules/@synergysg/ui-components/dist/**/*.{js,mjs}',
+    './node_modules/@gsynergysg/ui-components/dist/**/*.{js,mjs}',
   ],
   theme: {
     extend: {
@@ -197,7 +197,7 @@ If using TypeScript, ensure your `tsconfig.json` includes:
 ```tsx
 import '@synergysg/ui-components/styles.css';
 import 'antd/dist/reset.css';
-import { OSBadge, OSModalWrapper, cn } from '@synergysg/ui-components';
+import { OSBadge, OSModalWrapper, cn } from '@gsynergysg/ui-components';
 
 export default function MyComponent() {
   return (
@@ -221,7 +221,7 @@ export default function MyComponent() {
 The `cn` utility combines `clsx` and `tailwind-merge` for conditional and conflict-free class names:
 
 ```tsx
-import { cn } from '@synergysg/ui-components';
+import { cn } from '@gsynergysg/ui-components';
 
 function Button({ className, isActive }) {
   return (
@@ -362,7 +362,7 @@ import 'antd/dist/reset.css';
 
 ## Design Tokens
 
-Components read their colors from CSS variables (see `src/theme.css`). Importing `@synergysg/ui-components/styles.css` loads these variables automatically. If you want only tokens (no component CSS), import `@synergysg/ui-components/theme.css` instead.
+Components read their colors from CSS variables (see `src/theme.css`). Importing `@gsynergysg/ui-components/styles.css` loads these variables automatically. If you want only tokens (no component CSS), import `@gsynergysg/ui-components/theme.css` instead.
 
 ## License
 
