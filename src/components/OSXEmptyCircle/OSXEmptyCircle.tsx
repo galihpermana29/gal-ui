@@ -32,7 +32,7 @@ const OSXEmptyCircle: React.FC<OSXEmptyCircleInterface> = ({
 }) => {
   return (
     <Flex
-      className={twMerge('self-stretch relative py-16', className)}
+      className={twMerge('osx-empty-circle-container', className)}
       vertical
       align='center'
     >
@@ -47,7 +47,7 @@ const OSXEmptyCircle: React.FC<OSXEmptyCircleInterface> = ({
           width={480}
           height={480}
           className={twMerge(
-            'absolute -top-[148px] overflow-hidden w-full max-w-[480px] h-[480px]', // Add padding to create space
+            'osx-empty-circle-image',
             customImageClassName
           )}
         />
@@ -55,22 +55,20 @@ const OSXEmptyCircle: React.FC<OSXEmptyCircleInterface> = ({
       <Flex vertical align='center' gap={24} flex={1}>
         <Flex
           vertical
-          gap={16}
-          justify='center'
           align='center'
-          className='z-10'
+          className='osx-empty-circle-content'
         >
           {icon}
           <Flex
             vertical
             gap={4}
             align='center'
-            className='self-stretch text-center'
+            className='osx-empty-circle-textwrap'
           >
-            <Typography.Text className='text-md font-semibold'>
+            <Typography.Text className='osx-empty-circle-title'>
               {title}
             </Typography.Text>
-            <Typography.Text className='text-text-tertiary'>
+            <Typography.Text className='osx-empty-circle-description'>
               {description}
             </Typography.Text>
           </Flex>

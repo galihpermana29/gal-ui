@@ -9,13 +9,13 @@ const EmptyDataTable: React.FC<{
 }> = ({ title, description, buttons, emptyClassName }) => {
   return (
     <Flex
-      className={`py-12 self-center ${emptyClassName}`}
+      className={`osx-empty-table-container ${emptyClassName}`}
       vertical
       justify="center"
       align="center"
       gap={12}
     >
-      <div className="w-[100px] h-[100px]">
+      <div className="osx-empty-table-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -114,11 +114,11 @@ const EmptyDataTable: React.FC<{
         </svg>
       </div>
       <Flex gap={4} vertical>
-        <Typography.Text className="text-utility-gray-700 text-center text-base font-semibold">
+        <Typography.Text className="osx-empty-table-text">
           {title}
         </Typography.Text>
         {description && (
-          <Typography.Text className="text-utility-gray-700 text-center">
+          <Typography.Text className="osx-empty-table-description">
             {description}
           </Typography.Text>
         )}

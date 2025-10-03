@@ -10,9 +10,14 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./styles.css": "./dist/styles.css",
-    "./theme.css": "./dist/theme.css",
-    "./tailwind.preset": "./tailwind.preset.js"
+    "./styles.css": {
+      "default": "./dist/styles.css"
+    },
+    "./theme.css": {
+      "default": "./dist/theme.css"
+    },
+    "./tailwind.preset": "./tailwind.preset.js",
+    "./dist/*": "./dist/*"
   },
   "files": [
     "dist",

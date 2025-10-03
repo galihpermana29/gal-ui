@@ -39,57 +39,57 @@ export default function OSXBadge({
   function badgeStyle() {
     switch (type) {
       case 'red':
-        return 'text-utility-error-700 border-border-error_subtle bg-utility-error-50';
+        return 'osx-badge-red';
       case 'yellow':
-        return 'text-utility-warning-700 border-utility-warning-300 bg-utility-warning-50';
+        return 'osx-badge-yellow';
       case 'gray':
-        return 'text-utility-gray-700 border-utility-gray-200 bg-utility-gray-50';
+        return 'osx-badge-gray';
       case 'blue':
-        return ' text-utility-blue-700 border-utility-blue-200 bg-button-secondary-color-bg';
+        return 'osx-badge-blue';
       case 'blue-light':
-        return ' text-utility-blue-light-700 border-utility-blue-light-200 bg-utility-blue-light-50';
+        return 'osx-badge-blue-light';
       case 'purple':
-        return ' text-utility-purple-700 border-utility-purple-200 bg-utility-purple-50';
+        return 'osx-badge-purple';
       case 'gray-blue':
-        return ' text-utility-gray-blue-700 border-utility-gray-blue-200 bg-utility-gray-blue-50';
+        return 'osx-badge-gray-blue';
       case 'brand':
-        return ' text-utility-brand-700 border-utility-brand-200 bg-utility-brand-50';
+        return 'osx-badge-brand';
       case 'white':
-        return ' text-text-secondary border-border-primary bg-bg-primary';
+        return 'osx-badge-white';
       case 'pink':
-        return ' text-utility-pink-700 border-utility-pink-200 bg-utility-pink-50';
+        return 'osx-badge-pink';
       case 'orange':
-        return ' text-utility-orange-700 border-utility-orange-200 bg-utility-orange-50';
+        return 'osx-badge-orange';
       default:
-        return 'text-utility-success-700 border-utility-success-300 bg-utility-success-50';
+        return 'osx-badge-green';
     }
   }
 
   function badgeSize() {
     switch (size) {
       case 'sm':
-        return 'px-[6px] py-[2px] text-xs';
+        return 'osx-badge-sm';
       case 'lg':
-        return 'px-[10px] py-2 text-sm';
+        return 'osx-badge-lg';
       default:
-        return 'px-2 py-0.5 text-sm';
+        return 'osx-badge-md';
     }
   }
 
   function badgeShape() {
     switch (shape) {
       case 'square':
-        return 'rounded-[6px]';
+        return 'osx-badge-square';
       default:
-        return 'rounded-full';
+        return 'osx-badge-rounded';
     }
   }
 
   return (
     <div
       className={clsx(
-        `border flex items-center text-center max-w-fit font-medium gap-1`,
-        onRemove ? 'justify-between' : '',
+        'osx-badge',
+        onRemove && 'osx-badge-with-remove',
         badgeStyle(),
         badgeSize(),
         badgeShape(),
@@ -103,7 +103,7 @@ export default function OSXBadge({
           width={15}
           height={15}
           onClick={onRemove}
-          className='cursor-pointer'
+          className='osx-badge-remove-icon'
         />
       )}
     </div>

@@ -18,35 +18,35 @@ interface IBannerProps {
 }
 
 const typeBadgeText = {
-  error: 'text-utility-error-700',
-  warning: 'text-utility-warning-700',
-  success: 'text-utility-success-700',
-  grayed: 'text-text-secondary',
-  blue: 'text-text-brand-secondary',
+  error: 'osx-banner-text-error',
+  warning: 'osx-banner-text-warning',
+  success: 'osx-banner-text-success',
+  grayed: 'osx-banner-text-grayed',
+  blue: 'osx-banner-text-blue',
 };
 
 const typeBadgeTextDesc = {
-  error: 'text-utility-error-700',
-  warning: 'text-utility-warning-700',
-  success: 'text-utility-success-700',
-  grayed: 'text-text-tertiary',
-  blue: 'text-text-brand-secondary',
+  error: 'osx-banner-text-desc-error',
+  warning: 'osx-banner-text-desc-warning',
+  success: 'osx-banner-text-desc-success',
+  grayed: 'osx-banner-text-desc-grayed',
+  blue: 'osx-banner-text-desc-blue',
 };
 
 const typeBadgeBackground = {
-  error: 'bg-utility-error-50',
-  warning: 'bg-bg-warning-primary',
-  success: 'bg-bg-success-secondary',
-  grayed: 'bg-white',
-  blue: 'bg-brand-primary',
+  error: 'osx-banner-error',
+  warning: 'osx-banner-warning',
+  success: 'osx-banner-success',
+  grayed: 'osx-banner-grayed',
+  blue: 'osx-banner-blue',
 };
 
 const typeBadgeBorder = {
-  error: 'border-red-500',
-  warning: 'border-yellow-500',
-  success: 'border-green-500',
-  grayed: 'border-border-disabled',
-  blue: 'border-blue-500',
+  error: 'osx-banner-border-error',
+  warning: 'osx-banner-border-warning',
+  success: 'osx-banner-border-success',
+  grayed: 'osx-banner-border-grayed',
+  blue: 'osx-banner-border-blue',
 };
 
 // Docs
@@ -66,9 +66,9 @@ export const OSXBannerInfo = ({
   return (
     <div
       data-testid='banner-container'
-      className={`flex items-start p-3 rounded-xl border-[1px] ${typeBadgeBorder[type]} ${typeBadgeBackground[type]} self-stretch `}
+      className={`osx-banner-container ${typeBadgeBackground[type]}`}
     >
-      <div className='flex items-center gap-3 flex-1 '>
+      <div className='osx-banner-content-wrapper'>
         <div
           data-testid='banner-wrapper'
           className={clsx(
@@ -77,10 +77,10 @@ export const OSXBannerInfo = ({
           )}
         >
           <div
-            className={`w-[40px] h-[40px] border-[1px] rounded-full flex justify-center items-center shrink-0 ${typeBadgeBorder[typeIcon || type]}`}
+            className={`osx-banner-icon-wrapper ${typeBadgeBorder[typeIcon || type]}`}
           >
             <div
-              className={`w-[30px] h-[30px] border-[1px] rounded-full flex justify-center items-center shrink-0 ${typeBadgeBorder[typeIcon || type]}`}
+              className={`osx-banner-icon-inner ${typeBadgeBorder[typeIcon || type]}`}
             >
               {customIcon || (
                 <AlertCircle
@@ -94,21 +94,21 @@ export const OSXBannerInfo = ({
           {/* <Image src={typeBadgeIcon[typeIcon]} alt='icon-image' /> */}
           <div
             data-testid='banner-content'
-            className={`flex !w-full ${direction === 'column'
-              ? 'flex-col'
-              : 'md:flex-row md:items-center justify-between flex-col'
-              } gap-[2px] text-left`}
+            className={clsx(
+              'osx-banner-content',
+              direction === 'column' ? 'osx-banner-content-column' : 'osx-banner-content-row'
+            )}
           >
             <div className='w-full'>
               {title && (
-                <p className={`${typeBadgeText[type]} text-base font-semibold`}>
+                <p className={`osx-banner-title ${typeBadgeText[type]}`}>
                   {title}
                 </p>
               )}
 
               {description && (
                 <div
-                  className={`text-sm font-[400] ${typeBadgeTextDesc[type]}`}
+                  className={`osx-banner-description ${typeBadgeTextDesc[type]}`}
                 >
                   {descriptionType === 'html' ? (
                     <div
@@ -123,7 +123,7 @@ export const OSXBannerInfo = ({
               )}
             </div>
             {customButton && (
-              <div className='flex justify-start items-start gap-4 mt-[8px]'>
+              <div className='osx-banner-button-wrapper'>
                 {customButton}
               </div>
             )}

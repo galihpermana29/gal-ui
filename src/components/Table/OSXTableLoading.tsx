@@ -8,7 +8,7 @@ const OSXTableLoading = ({
 }) => {
   const LoadingSVG = () => (
     <svg
-      className='animate-spin'
+      className='osx-animate-spin'
       width='32'
       height='32'
       viewBox='0 0 32 32'
@@ -33,13 +33,13 @@ const OSXTableLoading = ({
   );
 
   return (
-    <div className='flex flex-col justify-center items-center h-[50vh] gap-[16px]'>
+    <div className='osx-table-loading-container'>
       <Spin indicator={<LoadingSVG />} />
       <div>
-        <h1 className='text-text-secondary text-sm font-[500] text-center'>
+        <h1 className='osx-table-loading-title'>
           Loading...
         </h1>
-        <p className='text-text-secondary text-sm font-[400] text-center'>
+        <p className='osx-table-loading-desc'>
           {loadingDescription ??
             `Hang in there, we are retrieving your records.`}
         </p>

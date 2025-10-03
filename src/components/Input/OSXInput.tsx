@@ -36,24 +36,14 @@ export function OSXInputPassword({
   customClassName,
   ...args
 }: IOSXInput) {
-  let customClass = '';
-  if (customSize === 'xs') {
-    customClass = 'h-[36px]';
-  } else if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
-
+  const sizeClass = `osx-input-${customSize}`;
   return (
     <Input.Password
       {...args}
       className={clsx(
-        ' rounded-[8px] ',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-rounded',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName
       )}
     />
@@ -62,25 +52,16 @@ export function OSXInputPassword({
 
 export const OSXInput = forwardRef<InputRef, IOSXInput>(
   ({ customSize = 'sm', shadow, customClassName, ...args }, ref) => {
-    let customClass = '';
-    if (customSize === 'xs') {
-      customClass = 'h-[36px]';
-    } else if (customSize === 'sm') {
-      customClass = 'h-[40px]';
-    } else if (customSize === 'md') {
-      customClass = 'h-[44px]';
-    } else if (customSize === 'xl') {
-      customClass = 'h-[60px]';
-    }
+    const sizeClass = `osx-input-${customSize}`;
 
     return (
       <Input
         {...args}
         ref={ref}
         className={clsx(
-          'border-[1px] border-border-primary rounded-[8px]',
-          customClass,
-          shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+          'osx-input-base',
+          sizeClass,
+          shadow && 'osx-input-shadow',
           customClassName
         )}
       />
@@ -90,14 +71,8 @@ export const OSXInput = forwardRef<InputRef, IOSXInput>(
 
 export const OSXInputSearch = forwardRef<InputRef, IOSXInput>(
   ({ customSize = 'sm', shadow, customClassName, loading, ...args }, ref) => {
-    let customClass = '';
-    if (customSize === 'sm') {
-      customClass = 'h-[40px]';
-    } else if (customSize === 'md') {
-      customClass = 'h-[44px]';
-    } else if (customSize === 'xl') {
-      customClass = 'h-[60px]';
-    }
+    const sizeClass = `osx-input-${customSize}`;
+
 
     const iconSize: Record<TInputSize, number> = {
       xs: 18,
@@ -108,26 +83,25 @@ export const OSXInputSearch = forwardRef<InputRef, IOSXInput>(
 
     return (
       <Input
-        ref={ref}
         {...args}
+        ref={ref}
+        className={clsx(
+          'osx-input-base',
+          sizeClass,
+          shadow && 'osx-input-shadow',
+          customClassName
+        )}
         prefix={
           loading ? (
-            <Spin size='small' />
+            <Spin indicator={<LoadingOutlined spin />} size='small' />
           ) : (
             <SearchLg
               width={iconSize[customSize]}
               height={iconSize[customSize]}
-              className='text-text-quaternary'
+              className='osx-icon-quaternary'
             />
           )
         }
-        className={clsx(
-          'rounded-[8px] border-button-secondary-border w-[320px]',
-          customClass,
-          shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : 'shadow-none',
-          customClassName,
-          args.className
-        )}
       />
     );
   }
@@ -145,28 +119,21 @@ export function OSXDateRangePicker({
   customClassName,
   ...args
 }: IOSXDateRangePicker) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <>
       <DatePicker.RangePicker
         format={['DD MMM YYYY', 'DD MMM YYYY']}
         className={clsx(
-          'rounded-[8px]',
-          customClass,
-          shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+          'osx-input-base',
+          sizeClass,
+          shadow && 'osx-input-shadow',
           customClassName
         )}
-        popupClassName='rounded-[8px] border border-border-popup bg-bg-primary'
+        popupClassName='osx-popup-rounded'
         suffixIcon={
-          <Calendar width={17} height={17} className='text-text-quaternary' />
+          <Calendar width={17} height={17} className='osx-icon-quaternary' />
         }
         {...args}
       />
@@ -186,27 +153,20 @@ export function OSXDatePicker({
   customClassName,
   ...args
 }: IOSXDatePicker) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <>
       <DatePicker
         format={'DD MMM YYYY'}
         className={clsx(
-          'rounded-[8px] w-full',
-          customClass,
-          shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+          'osx-input-base',
+          sizeClass,
+          shadow && 'osx-input-shadow',
           customClassName
         )}
         suffixIcon={
-          <Calendar width={17} height={17} className='text-text-quaternary' />
+          <Calendar width={17} height={17} className='osx-icon-quaternary' />
         }
         {...args}
       />
@@ -226,21 +186,14 @@ export function OSXTimePickerRange({
   customClassName,
   ...args
 }: IOSXTimePickerRange) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <TimePicker.RangePicker
       className={clsx(
-        ' rounded-[8px]',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-base',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName
       )}
       {...args}
@@ -260,21 +213,14 @@ export function OSXTimePicker({
   customClassName,
   ...args
 }: IOSXTimePicker) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <TimePicker
       className={clsx(
-        ' rounded-[8px]',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-base',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName
       )}
       {...args}
@@ -294,22 +240,16 @@ export function OSXTextArea({
   customClassName,
   ...args
 }: IOSXTextArea) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
+
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <TextArea
       {...args}
       className={clsx(
-        ' rounded-[8px]',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-rounded',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName
       )}
     />
@@ -332,22 +272,16 @@ export function OSXSelect({
   hideIcon,
   ...args
 }: IOSXSelect) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'min-h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'min-h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'min-h-[60px]';
-  }
+
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <Select
       {...args}
       className={clsx(
-        'rounded-[8px]',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-base',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName,
         args.mode === 'tags' || args.mode === 'multiple'
           ? 'osx-select-custom-tags'
@@ -374,14 +308,8 @@ export function OSXSelectSearch({
   customClassName,
   ...args
 }: IOSXSelect) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'min-h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'min-h-[60px]';
-  }
+
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <Select
@@ -390,8 +318,8 @@ export function OSXSelectSearch({
       showSearch
       className={clsx(
         'custom-osx-select-search rounded-[8px]',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName,
         !args.mode
           ? 'custom-osx-select-search-single'
@@ -415,14 +343,8 @@ export function OSXCascader({
   customClassName,
   ...args
 }: IOSXCascader) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px]';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px]';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px]';
-  }
+
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <Cascader
@@ -430,9 +352,9 @@ export function OSXCascader({
       multiple={args.multiple ? true : undefined}
       {...(args as any)}
       className={clsx(
-        'rounded-[8px]',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-base',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName
       )}
     />
@@ -451,22 +373,16 @@ export function OSXInputNumber({
   customClassName,
   ...args
 }: IOSXInputNumber) {
-  let customClass = '';
-  if (customSize === 'sm') {
-    customClass = 'h-[40px] height-sm';
-  } else if (customSize === 'md') {
-    customClass = 'h-[44px] height-md';
-  } else if (customSize === 'xl') {
-    customClass = 'h-[60px] height-xl';
-  }
+
+  const sizeClass = `osx-input-${customSize}`;
 
   return (
     <InputNumber
       {...args}
       className={clsx(
-        '!rounded-[8px] border-border-primary',
-        customClass,
-        shadow ? 'shadow-[0_1px_2px_0px_rgb(16,24,40,0.05)]' : '',
+        'osx-input-base',
+        sizeClass,
+        shadow && 'osx-input-shadow',
         customClassName,
         'custom-input-number-osx'
       )}

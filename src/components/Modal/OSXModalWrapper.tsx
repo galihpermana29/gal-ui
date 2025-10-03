@@ -47,7 +47,7 @@ const OSXModalWrapper = ({
             {titleText}
           </span>
           {subtitle && (
-            <p className='text-sm font-normal text-text-tertiary'>{subtitle}</p>
+            <p className='osx-modal-subtitle'>{subtitle}</p>
           )}
         </Flex>
       }

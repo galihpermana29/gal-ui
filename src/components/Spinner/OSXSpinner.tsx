@@ -10,7 +10,7 @@ export default function OSXSpinner({
     size === 'xs' ? '22' : size === 'sm' ? '28' : size === 'lg' ? '36' : '32';
   return (
     <svg
-      className='animate-spin'
+      className='osx-animate-spin'
       width={sizeClass}
       height={sizeClass}
       viewBox='0 0 32 32'

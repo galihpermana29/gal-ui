@@ -11,11 +11,11 @@ type CascaderOption = NonNullable<CascaderProps<any>['options']>[number];
 const dropdownRender = (menus: React.ReactNode, onReset: () => void) => (
   <>
     {menus}
-    <div className='p-1.5 border-t'>
+    <div className='osx-cascader-dropdown-footer'>
       <Flex
         align='center'
         gap={5}
-        className='cursor-pointer text-sm transition-all rounded-sm hover:bg-bg-primary_hover py-[9px] px-2.5'
+        className='osx-cascader-reset-button'
         onClick={onReset}
       >
         <Trash01 width={16} color='var(--fg-quaternary)' />
@@ -51,7 +51,7 @@ const OSXCascaderFilter: React.FC<OSXCascaderFilterProps> = ({
   hideClearFilter,
   hideChevron,
   childrenButton = (
-    <div className='flex items-center gap-1'>
+    <div className='osx-cascader-filter-button'>
       Filter {!hideChevron && <ChevronDown width={20} height={20} />}
     </div>
   ),

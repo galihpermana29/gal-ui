@@ -11,26 +11,26 @@ const OSXPagination: PaginationProps['itemRender'] = (
 ) => {
   if (type === 'prev') {
     return (
-      <a className='flex items-center gap-[5px] h-[40px] w-0 md:w-auto py-[10px] px-0 md:px-[10px] rounded-[8px] transition-all  text-sm font-semibold'>
+      <a className='osx-pagination-prev'>
         <div>
-          <ArrowNarrowLeft className='w-[18px]' />
+          <ArrowNarrowLeft className='osx-pagination-icon' />
         </div>
-        <div className='hidden lg:block w-0 lg:w-auto'>Previous</div>
+        <div className='osx-pagination-prev-text'>Previous</div>
       </a>
     );
   }
   if (type === 'next') {
     return (
-      <a className='flex items-center gap-[5px] h-[40px] w-0 md:w-auto py-[10px] px-0 md:px-[10px] rounded-[8px] transition-all text-sm font-semibold'>
-        <div className='hidden lg:block w-0 lg:w-auto'>Next</div>
+      <a className='osx-pagination-next'>
+        <div className='osx-pagination-next-text'>Next</div>
         <div>
-          <ArrowNarrowRight className='w-[18px]' />
+          <ArrowNarrowRight className='osx-pagination-icon' />
         </div>
       </a>
     );
   }
   return (
-    <div className='h-[40px] w-auto md:w-[40px] flex items-center justify-center text-sm font-semibold text-text-tertiary'>
+    <div className='osx-pagination-item'>
       {originalElement}
     </div>
   );

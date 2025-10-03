@@ -52,14 +52,14 @@ const OSXTable = ({
       }}
     >
       {isForbidden && (
-        <div className='absolute bg-white/30 w-full h-full z-50 backdrop-blur-md border border-fg-warning-secondary rounded-xl'>
-          <div className='flex flex-col flex-1 h-full justify-center items-center gap-2'>
-            <Image src={NoAccess} alt='No Access' className='w-40' />
-            <div className='flex flex-col justify-center items-center px-4'>
-              <p className='text-text-secondary font-semibold'>
+        <div className='osx-table-forbidden-overlay'>
+          <div className='osx-table-forbidden-content'>
+            <Image src={NoAccess} alt='No Access' className='osx-table-forbidden-image' />
+            <div className='osx-table-forbidden-text-wrapper'>
+              <p className='osx-table-forbidden-title'>
                 {forbiddenTitle}
               </p>
-              <p className='text-text-secondary text-center'>{forbiddenDesc}</p>
+              <p className='osx-table-forbidden-desc'>{forbiddenDesc}</p>
             </div>
           </div>
         </div>
