@@ -2,6 +2,14 @@
   "name": "@gal-ui/components",
   "version": "1.0.0",
   "description": "Gal UI Components - Galih component library based on Ant Design",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galihpermana29/gal-ui.git"
+  },
+  "homepage": "https://github.com/galihpermana29/gal-ui#readme",
+  "bugs": {
+    "url": "https://github.com/galihpermana29/gal-ui/issues"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
