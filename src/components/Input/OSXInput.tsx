@@ -279,7 +279,7 @@ export function OSXSelect({
     <Select
       {...args}
       className={clsx(
-        'osx-input-base',
+        'osx-input-rounded',
         sizeClass,
         shadow && 'osx-input-shadow',
         customClassName,
