@@ -1,15 +1,15 @@
-# @gsynergysg/ui-components
+# @gal-ui/components
 
-Internal React component library built on Ant Design and Next.js for Synergy SG projects. Components now ship with static CSS classes, so Tailwind in the consumer is optional.
+Gal UI Components — React component library built on Ant Design and Next.js. Components ship with static CSS classes, so Tailwind in the consumer is optional.
 
 ## Installation
 
 ```bash
-npm install @gsynergysg/ui-components
+npm install @gal-ui/components
 # or
-yarn add @gsynergysg/ui-components
+yarn add @gal-ui/components
 # or
-pnpm add @gsynergysg/ui-components
+pnpm add @gal-ui/components
 ```
 
 ## Peer Dependencies
@@ -27,54 +27,54 @@ This package requires the following peer dependencies to be installed in your pr
 
 ## Exports and Naming Convention
 
-All public components are exported with the `OS` prefix for consistency:
+All public components are exported with the `G` prefix for consistency:
 
 ```ts
 import {
-  OSBadge,
-  OSModalWrapper,
-  OSTable,
-  OSTableLoading,
-  OSPagination,
-  OSCollapse,
-  OSDropdownButton,
-  OSInput,
-  OSInputPassword,
-  OSInputSearch,
-  OSDatePicker,
-  OSDateRangePicker,
-  OSTimePicker,
-  OSTimePickerRange,
-  OSTextArea,
-  OSSelect,
-  OSSelectSearch,
-  OSCascader,
-  OSInputNumber,
-  OSSpinner,
-  OSSegmented,
-  OSResponsiveModalDrawer,
-  OSEmptyCircle,
-  OSXBannerInfo,
-  OSCascaderFilter,
+  GBadge,
+  GModalWrapper,
+  GTable,
+  GTableLoading,
+  GPagination,
+  GCollapse,
+  GDropdownButton,
+  GInput,
+  GInputPassword,
+  GInputSearch,
+  GDatePicker,
+  GDateRangePicker,
+  GTimePicker,
+  GTimePickerRange,
+  GTextArea,
+  GSelect,
+  GSelectSearch,
+  GCascader,
+  GInputNumber,
+  GSpinner,
+  GSegmented,
+  GResponsiveModalDrawer,
+  GEmptyCircle,
+  GBannerInfo,
+  GCascaderFilter,
   cn,
-} from '@gsynergysg/ui-components';
+} from '@gal-ui/components';
 ```
 
-Types are also aliased with `OS` when applicable (e.g., `OSBadgeProps`).
+Types are also aliased with `G` when applicable (e.g., `GBadgeProps`).
 
 ## Quick Usage Examples
 
 ```tsx
-import '@gsynergysg/ui-components/styles.css';
+import '@gal-ui/components/styles.css';
 import 'antd/dist/reset.css';
-import { OSBadge, OSInput, OSDropdownButton } from '@gsynergysg/ui-components';
+import { GBadge, GInput, GDropdownButton } from '@gal-ui/components';
 
 export default function Example() {
   return (
     <div className="p-4">
-      <OSBadge type="green">Active</OSBadge>
+      <GBadge type="green">Active</GBadge>
       <div className="mt-4">
-        <OSInput placeholder="Search..." />
+        <GInput placeholder="Search..." />
       </div>
     </div>
   );
@@ -83,7 +83,7 @@ export default function Example() {
 
 ## Styling & Themes
 
-- Design tokens are shipped via CSS variables and included when you import `@gsynergysg/ui-components/styles.css`.
+- Design tokens are shipped via CSS variables and included when you import `@gal-ui/components/styles.css`.
 - Components use static CSS classnames (no Tailwind dependency in consumer). A Tailwind preset remains available for teams that want to align tokens/utilities, but it is optional.
 - CSS is marked as side-effectful to avoid tree-shaking.
 
@@ -95,7 +95,7 @@ Import the component styles in your app's root layout or main entry file:
 
 ```tsx
 // app/layout.tsx (Next.js App Router)
-import '@gsynergysg/ui-components/styles.css';
+import '@gal-ui/components/styles.css';
 import 'antd/dist/reset.css'; // Ant Design styles
 
 export default function RootLayout({ children }) {
@@ -122,13 +122,13 @@ Tailwind is no longer required by the consumer app for component styling. If you
 // tailwind.config.js
 module.exports = {
   presets: [
-    require('@gsynergysg/ui-components/tailwind.preset')
+    require('@gal-ui/components/tailwind.preset')
   ],
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     // Include the component library (only if you use Tailwind utilities alongside components)
-    './node_modules/@gsynergysg/ui-components/dist/**/*.{js,mjs}',
+    './node_modules/@gal-ui/components/dist/**/*.{js,mjs}',
   ],
   // Your custom config here
 };
@@ -145,7 +145,7 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     // Include the component library
-    './node_modules/@gsynergysg/ui-components/dist/**/*.{js,mjs}',
+    './node_modules/@gal-ui/components/dist/**/*.{js,mjs}',
   ],
   theme: {
     extend: {
@@ -195,22 +195,22 @@ If using TypeScript, ensure your `tsconfig.json` includes:
 ### Basic Example
 
 ```tsx
-import '@synergysg/ui-components/styles.css';
+import '@gal-ui/components/styles.css';
 import 'antd/dist/reset.css';
-import { OSBadge, OSModalWrapper, cn } from '@gsynergysg/ui-components';
+import { GBadge, GModalWrapper, cn } from '@gal-ui/components';
 
 export default function MyComponent() {
   return (
     <div>
-      <OSBadge type="green">Active</OSBadge>
+      <GBadge type="green">Active</GBadge>
 
-      <OSModalWrapper
+      <GModalWrapper
         open
         titleText="Hello"
         onCancel={() => console.log('close')}
       >
         Content here
-      </OSModalWrapper>
+      </GModalWrapper>
     </div>
   );
 }
@@ -221,7 +221,7 @@ export default function MyComponent() {
 The `cn` utility combines `clsx` and `tailwind-merge` for conditional and conflict-free class names:
 
 ```tsx
-import { cn } from '@gsynergysg/ui-components';
+import { cn } from '@gal-ui/components';
 
 function Button({ className, isActive }) {
   return (
@@ -240,18 +240,18 @@ function Button({ className, isActive }) {
 
 ## Available Components
 
-- **OSBadge**
-- **OSModalWrapper**
-- **OSTable**, **OSTableLoading**, **OSPagination**
-- **OSCollapse**
-- **OSDropdownButton**
-- **OSInput**, **OSInputPassword**, **OSInputSearch**, **OSDatePicker**, **OSDateRangePicker**, **OSTimePicker**, **OSTimePickerRange**, **OSTextArea**, **OSSelect**, **OSSelectSearch**, **OSCascader**, **OSInputNumber**
-- **OSSpinner**
-- **OSSegmented**
-- **OSResponsiveModalDrawer**
-- **OSEmptyCircle**
-- **OSXCascaderFilter**
-- **OSXBannerInfo**
+- **GBadge**
+- **GModalWrapper**
+- **GTable**, **GTableLoading**, **GPagination**
+- **GCollapse**
+- **GDropdownButton**
+- **GInput**, **GInputPassword**, **GInputSearch**, **GDatePicker**, **GDateRangePicker**, **GTimePicker**, **GTimePickerRange**, **GTextArea**, **GSelect**, **GSelectSearch**, **GCascader**, **GInputNumber**
+- **GSpinner**
+- **GSegmented**
+- **GResponsiveModalDrawer**
+- **GEmptyCircle**
+- **GCascaderFilter**
+- **GBannerInfo**
 
 ## Development
 
@@ -298,7 +298,7 @@ The `prepublishOnly` script will automatically build the package before publishi
 Create or update an `.npmrc` (user-level or project-level):
 
 ```ini
-@synergysg:registry=https://registry.npmjs.org/
+@gal-ui:registry=https://registry.npmjs.org/
 //registry.npmjs.org/:_authToken=${NPM_TOKEN}
 ```
 
@@ -322,7 +322,7 @@ If you prefer GitHub Packages, update `publishConfig.registry` in `package.json`
 ```
 
 ```
-@synergysg:registry=https://npm.pkg.github.com/
+@gal-ui:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -354,7 +354,7 @@ npm publish --access restricted
 - Import styles once in your app root:
 
 ```tsx
-import '@synergysg/ui-components/styles.css';
+import '@gal-ui/components/styles.css';
 import 'antd/dist/reset.css';
 ```
 
@@ -362,12 +362,12 @@ import 'antd/dist/reset.css';
 
 ## Design Tokens
 
-Components read their colors from CSS variables (see `src/theme.css`). Importing `@gsynergysg/ui-components/styles.css` loads these variables automatically. If you want only tokens (no component CSS), import `@gsynergysg/ui-components/theme.css` instead.
+Components read their colors from CSS variables (see `src/theme.css`). Importing `@gal-ui/components/styles.css` loads these variables automatically. If you want only tokens (no component CSS), import `@gal-ui/components/theme.css` instead.
 
 ## License
 
-UNLICENSED - Internal use only for Synergy SG projects.
+UNLICENSED - Personal/internal use.
 
 ## Support
 
-For issues or questions, contact the Synergy SG development team.
+Maintained by Galih.

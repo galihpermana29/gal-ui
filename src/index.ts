@@ -1,75 +1,75 @@
 import './theme.css';
 import './styles.css';
 
-// Components - OS-prefixed public API (aliased from internal OSX* files)
+// Components - G-prefixed public API (aliased from internal OSX* files)
 
 // Badge
-export { default as OSBadge } from "./components/Badge/OSXBadge";
+export { default as GBadge } from "./components/Badge/OSXBadge";
 export type {
-  OSXBadgeProps as OSBadgeProps,
-  OSXBadgeType as OSBadgeType,
+  OSXBadgeProps as GBadgeProps,
+  OSXBadgeType as GBadgeType,
 } from "./components/Badge/OSXBadge";
 
 // Modal
-export { default as OSModalWrapper } from "./components/Modal/OSXModalWrapper";
-export type { OSXModalWrapperProps as OSModalWrapperProps } from "./components/Modal/OSXModalWrapper";
+export { default as GModalWrapper } from "./components/Modal/OSXModalWrapper";
+export type { OSXModalWrapperProps as GModalWrapperProps } from "./components/Modal/OSXModalWrapper";
 
 // Table
-export { default as OSTable } from "./components/Table/OSXTable";
-export { default as OSTableLoading } from "./components/Table/OSXTableLoading";
+export { default as GTable } from "./components/Table/OSXTable";
+export { default as GTableLoading } from "./components/Table/OSXTableLoading";
 
 // Pagination
-export { default as OSPagination } from "./components/Pagination/OSXPagination";
+export { default as GPagination } from "./components/Pagination/OSXPagination";
 
 // Collapse
-export { default as OSCollapse } from "./components/Collapse/OSXCollapse";
+export { default as GCollapse } from "./components/Collapse/OSXCollapse";
 
 // Dropdown
-export { default as OSDropdownButton } from "./components/Dropdown/OSXDropdownButton";
-export type { OSXDropdownButtonProps as OSDropdownButtonProps } from "./components/Dropdown/OSXDropdownButton";
+export { default as GDropdownButton } from "./components/Dropdown/OSXDropdownButton";
+export type { OSXDropdownButtonProps as GDropdownButtonProps } from "./components/Dropdown/OSXDropdownButton";
 
 // Button
-export { default as OSButton } from "./components/Button";
+export { default as GButton } from "./components/Button";
 export type {
-  AppButtonProps as OSButtonProps,
-  AppButtonSize as OSButtonSize,
-  AppButtonType as OSButtonType,
+  AppButtonProps as GButtonProps,
+  AppButtonSize as GButtonSize,
+  AppButtonType as GButtonType,
 } from "./components/Button";
 
 // Input family
 export {
-  OSXInput as OSInput,
-  OSXInputPassword as OSInputPassword,
-  OSXInputSearch as OSInputSearch,
-  OSXDatePicker as OSDatePicker,
-  OSXDateRangePicker as OSDateRangePicker,
-  OSXTimePicker as OSTimePicker,
-  OSXTimePickerRange as OSTimePickerRange,
-  OSXTextArea as OSTextArea,
-  OSXCascader as OSCascader,
-  OSXSelect as OSSelect,
-  OSXSelectSearch as OSSelectSearch,
-  OSXInputNumber as OSInputNumber,
+  OSXInput as GInput,
+  OSXInputPassword as GInputPassword,
+  OSXInputSearch as GInputSearch,
+  OSXDatePicker as GDatePicker,
+  OSXDateRangePicker as GDateRangePicker,
+  OSXTimePicker as GTimePicker,
+  OSXTimePickerRange as GTimePickerRange,
+  OSXTextArea as GTextArea,
+  OSXCascader as GCascader,
+  OSXSelect as GSelect,
+  OSXSelectSearch as GSelectSearch,
+  OSXInputNumber as GInputNumber,
 } from "./components/Input/OSXInput";
 
 // Spinner
-export { default as OSSpinner } from "./components/Spinner/OSXSpinner";
+export { default as GSpinner } from "./components/Spinner/OSXSpinner";
 
 // Segmented
-export { default as OSSegmented } from "./components/Segmented/OSXSegmented";
+export { default as GSegmented } from "./components/Segmented/OSXSegmented";
 
 // Responsive Modal/Drawer
-export { default as OSResponsiveModalDrawer } from "./components/ResponsiveModalDrawer/OSXResponsiveModalDrawer";
-export type { OSXResponsiveModalDrawerProps as OSResponsiveModalDrawerProps } from "./components/ResponsiveModalDrawer/OSXResponsiveModalDrawer";
+export { default as GResponsiveModalDrawer } from "./components/ResponsiveModalDrawer/OSXResponsiveModalDrawer";
+export type { OSXResponsiveModalDrawerProps as GResponsiveModalDrawerProps } from "./components/ResponsiveModalDrawer/OSXResponsiveModalDrawer";
 
 // Empty Circle
-export { default as OSEmptyCircle } from "./components/OSXEmptyCircle/OSXEmptyCircle";
+export { default as GEmptyCircle } from "./components/OSXEmptyCircle/OSXEmptyCircle";
 
 // Banner
-export { OSXBannerInfo } from "./components/Banner/Banner";
+export { OSXBannerInfo as GBannerInfo } from "./components/Banner/Banner";
 
 // Cascader Filter
-export { default as OSCascaderFilter } from "./components/CascaderFilter/OSXCascaderFilter";
+export { default as GCascaderFilter } from "./components/CascaderFilter/OSXCascaderFilter";
 
 // Utilities
 export { cn } from "./utils";
